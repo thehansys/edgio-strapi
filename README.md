@@ -3,7 +3,7 @@
 This guide will help you
 set up new Strapi app with Edgio using nodejs-connector.
 
-1. Create new basic Strapi app:
+1. Create new Quickstart Strapi app:
 ```
 npx create-strapi-app@latest edgio-strapi
 cd edgio-strapi
@@ -11,8 +11,8 @@ cd edgio-strapi
 
 2. Install all dependencies and Edgio
 ```
-npm i
-npm i -D @edgio/cli @edgio/core @edgio/nodejs-connector
+yarn install
+yarn add -D @edgio/cli @edgio/core @edgio/nodejs-connector
 ```
 
 3. Create `server.js` file with following content:
@@ -42,11 +42,6 @@ export default new Router().use(connectorRoutes)
 ```
 5. Create `edgio.config.js` file with following content:
 ```
-import { Router } from '@edgio/core'
-import { connectorRoutes } from '@edgio/connectors'
-export default new Router().use(connectorRoutes)
-
-Create edgio.config.js file:
 module.exports = {
   connector: '@edgio/nodejs-connector',
   nodejsConnector: {
